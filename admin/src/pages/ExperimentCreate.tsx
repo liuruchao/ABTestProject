@@ -117,9 +117,14 @@ const ExperimentCreate: React.FC = () => {
 
   const handleSaveGroup = () => {
     if (editingGroup) {
-      setGroups(groups.map(group => 
-        group.id === editingGroup.id ? editingGroup : group
-      ).filter(group => !group.id.startsWith('new_')));
+      const exists = groups.some(group => group.id === editingGroup.id);
+      if (exists) {
+        setGroups(groups.map(group =>
+          group.id === editingGroup.id ? editingGroup : group
+        ));
+      } else {
+        setGroups([...groups, editingGroup]);
+      }
       setGroupModalVisible(false);
       setEditingGroup(null);
     }
@@ -146,9 +151,14 @@ const ExperimentCreate: React.FC = () => {
 
   const handleSaveRule = () => {
     if (editingRule) {
-      setRouteRules(routeRules.map(rule => 
-        rule.id === editingRule.id ? editingRule : rule
-      ));
+      const exists = routeRules.some(rule => rule.id === editingRule.id);
+      if (exists) {
+        setRouteRules(routeRules.map(rule =>
+          rule.id === editingRule.id ? editingRule : rule
+        ));
+      } else {
+        setRouteRules([...routeRules, editingRule]);
+      }
       setRuleModalVisible(false);
       setEditingRule(null);
     }
@@ -308,7 +318,7 @@ const ExperimentCreate: React.FC = () => {
 
       {/* 实验组编辑模态框 */}
       <Modal
-        title={editingGroup?.id.startsWith('new_') ? '添加实验组' : '编辑实验组'}
+        title={groups.some(group => group.id === editingGroup?.id) ? '编辑实验组' : '添加实验组'}
         open={groupModalVisible}
         onOk={handleSaveGroup}
         onCancel={() => setGroupModalVisible(false)}
@@ -361,7 +371,7 @@ const ExperimentCreate: React.FC = () => {
 
       {/* 路由规则编辑模态框 */}
       <Modal
-        title={editingRule?.id.startsWith('new_') ? '添加路由规则' : '编辑路由规则'}
+        title={routeRules.some(rule => rule.id === editingRule?.id) ? '编辑路由规则' : '添加路由规则'}
         open={ruleModalVisible}
         onOk={handleSaveRule}
         onCancel={() => setRuleModalVisible(false)}
