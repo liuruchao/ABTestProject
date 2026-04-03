@@ -1,0 +1,14 @@
+{
+  "name": "ab-test-shared",
+  "version": "1.0.0",
+  "description": "A/B测试共享类型和工具",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}

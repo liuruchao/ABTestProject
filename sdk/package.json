@@ -1,0 +1,40 @@
+{
+  "name": "@abtest/decision-sdk",
+  "version": "1.0.0",
+  "description": "A/B测试流量决策层SDK - 提供稳定哈希分流、缓存策略和分组一致性保障",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ab-test",
+    "decision",
+    "hash",
+    "cache",
+    "experiment"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
