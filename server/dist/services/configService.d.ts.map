@@ -1,0 +1,1 @@
+{"version":3,"file":"configService.d.ts","sourceRoot":"","sources":["../../src/services/configService.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,UAAU,EAAc,MAAM,eAAe,CAAC;AAIrE,qBAAa,aAAa;IAClB,eAAe,IAAI,OAAO,CAAC,YAAY,CAAC;IAiCxC,aAAa,CAAC,KAAK,EAAE,MAAM,GAAG,OAAO,CAAC,UAAU,CAAC;IAyDjD,UAAU,CAAC,MAAM,EAAE,GAAG,GAAG,OAAO,CAAC,GAAG,CAAC;IAM3C,OAAO,CAAC,0BAA0B;CAuCnC"}
